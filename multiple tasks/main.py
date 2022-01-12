@@ -32,11 +32,11 @@ from transformers import (
 from transformers import GPT2Tokenizer
 
 # comment this if you want to load gpt2 class from transformers
-from models import GPT2LMHeadModel
-from models import GPT2Config, GPT2SmallConfig
+#from models import GPT2LMHeadModel
+#from models import GPT2Config, GPT2SmallConfig
 
 # uncomment this if you want to load gpt2 class from transformers
-# from transformers import GP2Config, GPT2LMHeadModel
+from transformers import GP2Config, GPT2LMHeadModel
 
 from data.dataset.language_model import *
 from utils.model import *
@@ -50,11 +50,15 @@ except ImportError:
 
 logger = logging.getLogger(__name__)
 
-
 MODEL_CLASSES = {
     "gpt2": (GPT2Config, GPT2LMHeadModel, GPT2Tokenizer),
-    "gpt2-small": (GPT2SmallConfig, GPT2LMHeadModel, GPT2Tokenizer),
+   
 }
+
+# MODEL_CLASSES = {
+#     "gpt2": (GPT2Config, GPT2LMHeadModel, GPT2Tokenizer),
+#     "gpt2-small": (GPT2SmallConfig, GPT2LMHeadModel, GPT2Tokenizer),
+# }
 
 
 def get_model_tokenizer(args):
